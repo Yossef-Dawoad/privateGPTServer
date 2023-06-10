@@ -1,3 +1,4 @@
+import os
 from fastapi import FastAPI, File, UploadFile
 from fastapi.responses import JSONResponse
 from pathlib import Path
@@ -7,7 +8,9 @@ from langchain.embeddings import HuggingFaceEmbeddings
 from langchain.vectorstores import Chroma
 from langchain import PromptTemplate, HuggingFaceHub
 from langchain.chains import RetrievalQA
+from dotenv import load_dotenv
 
+load_dotenv()
 app = FastAPI()
 
 # Initialize the embedding model and the llm
@@ -17,7 +20,7 @@ embeddings = HuggingFaceEmbeddings(model_name=embedding_model_name)
 repo_id = "tiiuae/falcon-7b-instruct"
 llm = HuggingFaceHub(
     repo_id=repo_id,
-    huggingfacehub_api_token="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",
+    huggingfacehub_api_token=os.getenv("huggingfacehub_api_token"),
     model_kwargs={"temperature": 0.6, "max_new_tokens": 1024},
 )
 

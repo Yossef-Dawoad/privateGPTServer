@@ -13,6 +13,8 @@ huggingface-hub = "^0.15.1"
 chromadb = "^0.3.26"
 poppler-utils = "^0.1.0"
 sentence-transformers = "^2.2.2"
+python-dotenv = "^1.0.0"
+uvicorn = "^0.22.0"
 
 
 
