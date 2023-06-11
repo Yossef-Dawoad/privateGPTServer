@@ -734,13 +734,13 @@ files = [
 
 [[package]]
 name = "fsspec"
-version = "2023.5.0"
+version = "2023.6.0"
 description = "File-system specification"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "fsspec-2023.5.0-py3-none-any.whl", hash = "sha256:51a4ad01a5bb66fcc58036e288c0d53d3975a0df2a5dc59a93b59bade0391f2a"},
-    {file = "fsspec-2023.5.0.tar.gz", hash = "sha256:b3b56e00fb93ea321bc9e5d9cf6f8522a0198b20eb24e02774d329e9c6fb84ce"},
+    {file = "fsspec-2023.6.0-py3-none-any.whl", hash = "sha256:1cbad1faef3e391fba6dc005ae9b5bdcbf43005c9167ce78c915549c352c869a"},
+    {file = "fsspec-2023.6.0.tar.gz", hash = "sha256:d0b2f935446169753e7a5c5c55681c54ea91996cc67be93c39a154fb3a2742af"},
 ]
 
 [package.extras]
@@ -1040,13 +1040,13 @@ text-helpers = ["chardet (>=5.1.0,<6.0.0)"]
 
 [[package]]
 name = "langchainplus-sdk"
-version = "0.0.7"
+version = "0.0.8"
 description = "Client library to connect to the LangChainPlus LLM Tracing and Evaluation Platform."
 optional = false
 python-versions = ">=3.8.1,<4.0"
 files = [
-    {file = "langchainplus_sdk-0.0.7-py3-none-any.whl", hash = "sha256:aefc471058648bf9fc51f659117d33ef905d25a304d5a021f7e32c30f5921076"},
-    {file = "langchainplus_sdk-0.0.7.tar.gz", hash = "sha256:b58565bdcaf301d2e6e7dd8898f0b8ccf549a35476258e0c14d871d6de02d210"},
+    {file = "langchainplus_sdk-0.0.8-py3-none-any.whl", hash = "sha256:027388b1185f52e8edfe7c819d8a0abc51ef8921738a49adf9c62af0122996e9"},
+    {file = "langchainplus_sdk-0.0.8.tar.gz", hash = "sha256:c4497fba224edc080451e38b2bdba18d9a7b54d530239cd6f12a8d4a89e8eee5"},
 ]
 
 [package.dependencies]
@@ -1553,6 +1553,7 @@ files = [
 
 [package.dependencies]
 numpy = [
+    {version = ">=1.20.3", markers = "python_version < \"3.10\""},
     {version = ">=1.21.0", markers = "python_version >= \"3.10\""},
     {version = ">=1.23.2", markers = "python_version >= \"3.11\""},
 ]
@@ -2379,6 +2380,7 @@ files = [
 
 [package.dependencies]
 anyio = ">=3.4.0,<5"
+typing-extensions = {version = ">=3.10.0", markers = "python_version < \"3.10\""}
 
 [package.extras]
 full = ["httpx (>=0.22.0)", "itsdangerous", "jinja2", "python-multipart", "pyyaml"]
@@ -2575,13 +2577,13 @@ telegram = ["requests"]
 
 [[package]]
 name = "transformers"
-version = "4.30.0"
+version = "4.30.1"
 description = "State-of-the-art Machine Learning for JAX, PyTorch and TensorFlow"
 optional = false
 python-versions = ">=3.7.0"
 files = [
-    {file = "transformers-4.30.0-py3-none-any.whl", hash = "sha256:e90e9fc05310985f3ede2da278d11c91656b4a354b4935c54604f57409299aae"},
-    {file = "transformers-4.30.0.tar.gz", hash = "sha256:478e1709738237aa1b7bae1fd0ba7bd9d44352fe45972df7ed060077257e84f9"},
+    {file = "transformers-4.30.1-py3-none-any.whl", hash = "sha256:9b12bd9d69f21b7c56cd512117fd52856b3def1c9bfc1da97ab0ee4e8bcbd797"},
+    {file = "transformers-4.30.1.tar.gz", hash = "sha256:fa74fc271d0692f385d571ce83ec898e3350455f6076d21631f4eed4916e6ffd"},
 ]
 
 [package.dependencies]
@@ -3025,5 +3027,5 @@ cffi = ["cffi (>=1.11)"]
 
 [metadata]
 lock-version = "2.0"
-python-versions = "^3.10"
-content-hash = "234b9ef5362d0e429f73d132463ddd0ee28d204952d40fcb21c478b095823091"
+python-versions = "^3.9"
+content-hash = "8d756c118286aa0a784606f6061f79dbe347b8503a0422e8e7d2cc0ae81614b3"

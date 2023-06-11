@@ -39,7 +39,7 @@ vectordb = None
 
 
 # Define an endpoint for uploading text files and creating embeddings
-@app.post("/upload_files/")
+@app.post("/upload-files/")
 async def upload_files(files: list[UploadFile] = File(...)):
     global vectordb  # use the global variable
     # Create loaders for each file
@@ -59,7 +59,7 @@ async def upload_files(files: list[UploadFile] = File(...)):
 
 
 # Define an endpoint for performing similarity search on a query
-@app.get("/similarity_search/")
+@app.get("/similarity-search/")
 async def similarity_search(query: str):
     global vectordb  # use the global variable
     # Check if the vector database is initialized
@@ -78,8 +78,8 @@ async def similarity_search(query: str):
 
 
 # Define an endpoint for asking questions over the data using RetrievalQA
-@app.get("/ask_question/")
-async def ask_question(question: str):
+@app.get("/ask-with-data/")
+async def ask_question_with_data(question: str):
     global vectordb  # use the global variable
     # Check if the vector database is initialized
     if vectordb is None:
@@ -100,4 +100,18 @@ async def ask_question(question: str):
     return {
         "answer": results["result"],
         "source_documents": results["source_documents"],
+    }
+
+# Define an endpoint for asking questions over the data using RetrievalQA
+@app.get("/ask/")
+async def ask_question(question: str):
+
+    template = """
+You are a helpfull assistant. you gives helpful, summarized, and polite answers to the user's questions.
+question: {question}
+""".format(question=question)
+    
+    results = llm(template)
+    return {
+        "answer": results
     }

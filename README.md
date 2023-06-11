@@ -46,7 +46,15 @@ winget install curl
 ## Testing the endpoints
 To test the endpoints for this server in your command line, you can use curl commands like this:
 
-- To upload files to the `/upload_files/` endpoint, you can use something like:
+- To ask a question over the llm use the `/ask/` endpoint, you can use something like:
+
+```bash
+curl http://localhost:8000/ask/?question="your question here"
+```
+
+where `your question here` is the question you want to ask.
+
+- To upload files to the `/upload-files/` endpoint, you can use something like:
 
 ```bash
 curl -L -F "file=@YourFileName" http://localhost:8000/upload_files/
@@ -54,7 +62,7 @@ curl -L -F "file=@YourFileName" http://localhost:8000/upload_files/
 
 where `filename` is the name of the file you want to upload. You can also upload multiple files by adding more `-F` options.
 
-- To perform similarity search on a query using the `/similarity_search/` endpoint, you can use something like:
+- To perform similarity search on a query using the `/similarity-search/` endpoint, you can use something like:
 
 ```bash
 curl http://localhost:8000/similarity_search/?query="your query here"
@@ -62,7 +70,7 @@ curl http://localhost:8000/similarity_search/?query="your query here"
 
 where `your query here` is the text you want to search for.
 
-- To ask a question over the data using the `/ask_question/` endpoint, you can use something like:
+- To ask a question over the data using the `/ask-with-data/` endpoint, you can use something like:
 
 ```bash
 curl http://localhost:8000/ask_question/?question="your question here"
