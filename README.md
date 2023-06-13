@@ -21,7 +21,7 @@ and then jsut run the below command to install all needed packages
 ```bash
 poetry install
 ```
-### or     
+### or  (no-poetry)   
 normal `requirements.txt` with command 
 ```bash
 pip install -r requirements.txt
@@ -31,13 +31,17 @@ this server uses `falcon7B` model and `e5-base-v2` embeddings so it need to down
 models which require roughly `~6 GB` free from your Disk and RAM to load it   
 - first you have to navigate to [HuggingFaceHub](https://huggingface.co/settings/tokens) singup and generate new token   
 - create `.env` file in the current directory where the `app.py` live place `huggingfacehub_api_token=YOUR-TOKEN-HERE`
-- now go to the command line and type the follwing to run the server 
+- now go to the command line and type the follwing to run the server
+### with poetry
 ```bash 
 poetry run uvicorn main:app 
 #or
 #poetry run uvicorn main:app --port $PORT 
 ```
-
+### or (no-peotry)
+```bash
+uvicorn main:app 
+```
 - now the server is running to test the api in the command line you can do the next  
 first make sure you have curl installed   
 
