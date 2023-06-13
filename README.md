@@ -11,7 +11,8 @@ by simply upload your pdf file and chat with it **without the need for powerfull
 >  easing the user experance to run the server then optimize it, adding more LLM  
 >  and would be more than happy to accpet any contribution  
 
-## How to install **pre-requests** packages with single command
+## How to install ?
+### peotry single command
 this repo uses poetry as package managent to ease the devlopement so you need to install it first
 ```bash
 pip install poetry
@@ -20,7 +21,12 @@ and then jsut run the below command to install all needed packages
 ```bash
 poetry install
 ```
-## How to run ?
+### or     
+normal `requirements.txt` with command 
+```bash
+pip install -r requirements.txt
+```
+## How to run the server ?
 this server uses `falcon7B` model and `e5-base-v2` embeddings so it need to download these  
 models which require roughly `~6 GB` free from your Disk and RAM to load it   
 - first you have to navigate to [HuggingFaceHub](https://huggingface.co/settings/tokens) singup and generate new token   
