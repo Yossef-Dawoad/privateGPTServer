@@ -10,7 +10,8 @@ by simply upload your pdf file and chat with it **without the need for powerfull
 > Note: this not near a final product,this still work in progress and it's in the very early stage but it works, I plan to first  
 >  easing the user experance to run the server then optimize it, adding more LLM  
 >  and would be more than happy to accpet any contribution  
-
+## Demo
+this a demo of what to expect using this server  [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1pRNiVFJs5uJ5OZnhqpJ4sauTL53wtR1e#scrollTo=mC4FRTcQHH4E)
 ## How to install ?
 ### peotry single command
 this repo uses poetry as package managent to ease the devlopement so you need to install it first
