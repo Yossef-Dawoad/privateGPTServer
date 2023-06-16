@@ -1,5 +1,5 @@
 # privteGPTServer
-a fast-api server to talk with state-of-the-art Open source LLM Models with/out your custom data
+a fast-api server to talk with state-of-the-art Open source LLM Models with/out your custom data with just **2-3 GB** RAM.
 
 
 ## Introductions
@@ -28,8 +28,10 @@ normal `requirements.txt` with command
 pip install -r requirements.txt
 ```
 ## How to run the server ?
-this server uses `falcon7B` model and `e5-base-v2` embeddings so it need to download these  
-models which require roughly `~6 GB` free from your Disk and RAM to load it   
+this server uses `falcon7B` model and `e5-base-v2` embeddings so it need to download these models  
+To run HF Inference Models (models that run on the Hugging Face platform), you need to have at least `~ 2-3 GB`   
+of free disk space and RAM to load the models. If you want to download the models locally,
+  you should also have enough RAM and hardware capacity, which you can estimate roughly by the model size. 
 - first you have to navigate to [HuggingFaceHub](https://huggingface.co/settings/tokens) singup and generate new token   
 - create `.env` file in the current directory where the `app.py` live place `huggingfacehub_api_token=YOUR-TOKEN-HERE`
 - now go to the command line and type the follwing to run the server
