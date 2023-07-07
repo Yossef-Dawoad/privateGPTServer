@@ -22,7 +22,8 @@ parameters it expects and returns, what libraries and models it uses, etc. This 
 the code more readable and maintainable
 - add requirements.txt file
 
-## version 0.0.4
-- restructure the directory
-- docker support 
-- database setup not in use yet
+## version 0.0.4+dev
+- reorganized the code directory
+- added docker support - postgress-database + pgadmin  
+- dummy database setup not in use yet and not implemented correctly
+- add `/api/` route for better consistancy 

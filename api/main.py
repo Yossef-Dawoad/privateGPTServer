@@ -89,7 +89,7 @@ vectordb = None
 
 
 # Define an endpoint for uploading text files and creating embeddings
-@app.post("/upload_files/")
+@app.post("/api/upload_files/")
 async def upload_files(
     files: list[UploadFile] = File(...),
     embeddings: HuggingFaceEmbeddings = Depends(get_embedding_model),
@@ -108,7 +108,7 @@ async def upload_files(
 
 
 # Define an endpoint for performing similarity search on a query
-@app.get("/similarity_search/")
+@app.get("/api/similarity_search/")
 async def similarity_search(
     query: str,
     embeddings: HuggingFaceEmbeddings = Depends(get_embedding_model)
@@ -129,7 +129,7 @@ async def similarity_search(
 
 
 # Define an endpoint for asking questions over the data using RetrievalQA
-@app.get("/ask-with-data/")
+@app.get("/api/ask-with-data/")
 async def ask_question_with_data(
     question: str,
     llm: HuggingFaceHub = Depends(get_llm),
@@ -160,7 +160,7 @@ async def ask_question_with_data(
 
 
 # Define an endpoint for asking questions over the data using RetrievalQA
-@app.get("/ask/")
+@app.get("/api/ask/")
 async def ask_question(
     question: str,
     llm: HuggingFaceHub = Depends(get_llm),
