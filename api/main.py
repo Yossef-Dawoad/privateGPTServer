@@ -8,6 +8,9 @@ from langchain.embeddings import HuggingFaceEmbeddings
 from langchain.vectorstores import Chroma
 from langchain import PromptTemplate, HuggingFaceHub
 from langchain.chains import RetrievalQA
+
+import models
+from database import engine, sessionLocal
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -32,6 +35,15 @@ def get_llm():
         model_kwargs={"temperature":0.6, "max_new_tokens":1024}
     )
     return llm
+
+
+## setup the database
+
+models.Base.metadata.create_all(bind=engine)
+def get_db():
+    db = sessionLocal()
+    try: yield db
+    finally: db.close()
 
 # Define a dependency for creating a prompt template
 def get_prompt_template():

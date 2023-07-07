@@ -1,0 +1,37 @@
+
+version: '0.0.1+alpha'
+services:
+  db:
+    container_name: postgresql
+    image: postgres
+    restart: always 
+    environment:
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASS}
+      - POSTGRES_DB=${DB_NAME}
+    ports:
+      - 5432:5432
+
+  pgadmin:
+    container_name: pgadmin
+    image: dpage/pgadmin4
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=${PGADMIN_EMAIL}
+      - PGADMIN_DEFAULT_PASSWORD=${PGADMIN_PASS}
+    depends_on:
+      - db
+    ports:
+      - 5050:80
+
+  app:
+    container_name: app
+    build: ./api
+    restart: always 
+    command: bash -c 'alembic upgrade head && uvicorn api.main:app --host 0.0.0.0 --port 8000'
+    volumes:
+      - ./api:/api #make sure any changes in both directories are in-sync and vice-versa
+    depends_on: 	
+      - db
+    ports:
+      - 8000:8000
+

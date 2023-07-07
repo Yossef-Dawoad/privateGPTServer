@@ -1,8 +1,13 @@
 
-.env
+*.env
+venv/
 
 notes.md
 # deta space generated for deployment 
 
 Spacefile
 .space/
+__pycache__/
+*.pyc
+
+

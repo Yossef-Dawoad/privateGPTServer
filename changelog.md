@@ -21,3 +21,8 @@ if the vector database is not corrupted, etc. This would make the server more ro
 parameters it expects and returns, what libraries and models it uses, etc. This would make
 the code more readable and maintainable
 - add requirements.txt file
+
+## version 0.0.4
+- restructure the directory
+- docker support 
+- database setup not in use yet
