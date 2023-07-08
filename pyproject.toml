@@ -7,14 +7,15 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.9"
-fastapi = "^0.96.0"
-langchain = "^0.0.194"
-huggingface-hub = "^0.15.1"
+fastapi = "^0.100.0"
+langchain = "^0.0.227"
+huggingface-hub = "^0.16.4"
 chromadb = "^0.3.26"
 poppler-utils = "^0.1.0"
 sentence-transformers = "^2.2.2"
 python-dotenv = "^1.0.0"
 uvicorn = "^0.22.0"
+nvidia-cuda-nvrtc-cu11 = "^11.8.89"
 
 
 
