@@ -15,7 +15,7 @@ poppler-utils = "^0.1.0"
 sentence-transformers = "^2.2.2"
 python-dotenv = "^1.0.0"
 uvicorn = "^0.22.0"
-nvidia-cuda-nvrtc-cu11 = "^11.8.89"
+
 
 
 
